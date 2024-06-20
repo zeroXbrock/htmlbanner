@@ -1,3 +1,7 @@
+html {
+    font-family: Hack, 'Courier New', Courier, monospace;
+}
+
 body {
     margin: 0;
 }
@@ -5,7 +9,6 @@ body {
 .banner {
     background: linear-gradient(to right, transparent, #83e173);
     color: greenyellow;
-    font-family: Hack, 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0px;
     height: 32px;
@@ -30,4 +33,20 @@ body {
     width: 64px;
     margin: 0;
     z-index: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-text {
+    animation: marquee 42s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
 }
