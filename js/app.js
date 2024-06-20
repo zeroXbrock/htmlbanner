@@ -1,7 +1,13 @@
 const POLL_PERIOD_SECS = 30;
 const DEFAULT_CONTENT_SRC = 'https://raw.githubusercontent.com/zeroXbrock/banner-content/main/content.txt';
 
-/** Register scripts to run when DOM content is loaded. */
+/** Register scripts to run when DOM content is loaded.
+ * @param {{
+ *  contentUrl: string,
+ *  marqueeId: string,
+ *  secondsPerChar: number,
+ * }} params - Configuration parameters.
+ */
 const init = (params) => {
     const queryParams = getQueryParams();
     if (!('contentUrl' in queryParams)) {
