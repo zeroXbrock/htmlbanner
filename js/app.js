@@ -16,6 +16,7 @@ const init = (params) => {
     const contentUrl = queryParams['contentUrl'] || DEFAULT_CONTENT_SRC
     const args = {
         ...params,
+        ...queryParams,
         contentUrl,
     }
     document.addEventListener('DOMContentLoaded', () => {
@@ -34,10 +35,10 @@ const init = (params) => {
 async function doInit(params) {
     const {
         marqueeId,
-        secondsPerChar,
         contentUrl,
+        _period,
     } = params
     console.log("fetching content...")
     await fetchContent(marqueeId, contentUrl)
-    scaleAnimationDuration(marqueeId, secondsPerChar)
+    scaleAnimationDuration(marqueeId, _period)
 }
