@@ -1,11 +1,10 @@
-const CONTENT_SRC = 'https://raw.githubusercontent.com/zeroXbrock/banner-content/main/content.txt';
-
-/** Fetch content from `CONTENT_SRC` and inject it into element at given id.
+/** Fetch content from `contentSrc` and inject it into element with id `marqueeId`.
  * @param {string} marqueeId - The id of the element to inject the content into.
+ * @param {string} contentSrc - The URL to fetch the content from.
  */
-const fetchContent = async (marqueeId) => {
+const fetchContent = async (marqueeId, contentSrc) => {
     try {
-        const response = await fetch(CONTENT_SRC, {cache: "no-cache"});
+        const response = await fetch(contentSrc, {cache: "no-cache"});
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
