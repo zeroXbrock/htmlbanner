@@ -6,32 +6,21 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script type="application/javascript" src="js/scale-scroll-speed.js">
+        <script type="application/javascript" src="js/scale-scroll-speed.js"></script>
+        <script type="application/javascript" src="js/fetch-banner-content.js"></script>
+        <script type="application/javascript" src="js/app.js">
+            /* app.js must be invoked last;
+            it depends on previous scripts to be declared. */
         </script>
         <script type="application/javascript">
-            scaleAnimationDuration("marquee-text", 0.099);
+            init({
+                marqueeId: "marquee-text",
+                secondsPerChar: 0.05,
+            });
         </script>
         <div class="banner">
-            <div class="marquee" style="
-                margin-top: 30px;
-            ">
-                <div class="marquee-text">
-                    <!-- http://nietzsche-ipsum.com/ -->
-                    &#xe0b1;&#xe0b1;&#xe0b1;
-                    Salvation ascetic marvelous prejudice play war. Of god
-                    zarathustra good ultimate play ultimate. Ubermensch holiest
-                    eternal-return depths pious ubermensch sea self revaluation
-                    decieve pious convictions. Revaluation society good victorious
-                    contradict sexuality god revaluation philosophy.
-                    Intentions against enlightenment suicide good
-                    zarathustra. Horror victorious burying hatred mountains
-                    hope merciful. Pinnacle love joy value fearful philosophy
-                    dead. Abstract madness oneself merciful evil marvelous
-                    inexpedient dead zarathustra convictions noble disgust
-                    moral. Eternal-return noble morality ascetic justice
-                    depths pious evil.
-                    &#xe0b3;&#xe0b3;&#xe0b3;
-                </div>
+            <div class="marquee" style="margin-top: 30px;">
+                <div id="marquee-text" class="marquee-text"></div>
             </div>
         </div>
         <img class="animation" src="dancing-stickfigure.gif" alt="breakdancing stick figure">

@@ -48,4 +48,5 @@ body {
     animation: marquee 42s linear infinite;
     white-space: nowrap;
     overflow: hidden;
+    min-width: 100vw;
 }
