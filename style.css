@@ -2,6 +2,10 @@ html {
     font-family: Hack, 'Courier New', Courier, monospace;
 }
 
+a {
+    color: greenyellow;
+}
+
 body {
     margin: 0;
 }
