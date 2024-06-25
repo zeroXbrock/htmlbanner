@@ -50,4 +50,11 @@ async function doInit(params) {
     const bannerElement = document.getElementById(marqueeId);
     bannerElement.innerHTML = `&#xe0b1;&#xe0b1;&#xe0b1; ${content} &#xe0b3;&#xe0b3;&#xe0b3;`;
     scaleAnimationDuration(marqueeId, _period)
+    bannerElement.addEventListener('mouseover', () => {
+        bannerElement.style.animationPlayState = 'paused';
+    });
+
+    bannerElement.addEventListener('mouseout', () => {
+        bannerElement.style.animationPlayState = 'running';
+    });
 }
