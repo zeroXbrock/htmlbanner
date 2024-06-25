@@ -3,9 +3,10 @@ const DEFAULT_CONTENT_SRC = 'https://raw.githubusercontent.com/zeroXbrock/banner
 
 /** Register scripts to run when DOM content is loaded.
  * @param {{
- *  contentUrl: string,
+ *  contentUrl?: string,
  *  marqueeId: string,
  *  _period?: number,
+ * _content?: string,
  * }} params - hardcoded configuration parameters.
  */
 const init = (params) => {
@@ -19,6 +20,7 @@ const init = (params) => {
         ...params,
         contentUrl,
         _period: queryParams['_period'] || params._period,
+        _content: queryParams['_content'] || params._content,
     }
     document.addEventListener('DOMContentLoaded', () => {
         doInit(args)
@@ -38,8 +40,15 @@ async function doInit(params) {
         marqueeId,
         contentUrl,
         _period,
+        _content,
     } = params
-    console.log("fetching content...")
-    await fetchContent(marqueeId, contentUrl)
+    let content = _content
+    if (!_content) {
+        console.log("fetching content from URL...")
+        content = await fetchContent(contentUrl)
+    }
+
+    const bannerElement = document.getElementById(marqueeId);
+    bannerElement.innerHTML = `&#xe0b1;&#xe0b1;&#xe0b1; ${content} &#xe0b3;&#xe0b3;&#xe0b3;`;
     scaleAnimationDuration(marqueeId, _period)
 }
