@@ -1,6 +1,5 @@
 /** Sets animationDuration according to the amount of content in element with id `targetClass`.
  * @param {string} targetClass - The class of the element to scale the scroll speed of.
- * @param {number} secondsPerChar - The number of seconds each character adds to the animation duration. Defaults to `0.13`.
  * @param {number} _period - Overrides animation duration, ignoring text length.
  *
  * Notice: MUST be called after DOM is loaded. See [app.js](./app.js).

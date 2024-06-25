@@ -1,5 +1,9 @@
 /** Read query params from URL.
- * @returns {{contentUrl: string}} - An object containing the query params.
+ * @returns {{
+ * contentUrl?: string,
+ * _period?: number,
+ * _content?: string,
+ * }} - An object containing the query params.
  */
 function getQueryParams() {
     const params = {};

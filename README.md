@@ -7,7 +7,7 @@ OBS for live streaming.
 
 The page is hosted in github pages: [zeroXbrock.github.io/htmlbanner](https://zeroXbrock.github.io/htmlbanner).
 
-You can use the banner to display custom content without modifying any source code. 
+You can use the banner to display custom content without modifying any source code.
 The content that populates the banner is downloaded from the URL given by the query param `contentUrl`.
 
 ```txt
@@ -28,3 +28,16 @@ Click this link to see this example in your browser:
 
 [https://zeroXbrock.github.io/htmlbanner?contentUrl=https://raw.githubusercontent.com/zeroXbrock/banner-content/main/content.txt](https://zeroXbrock.github.io/htmlbanner?contentUrl=https://raw.githubusercontent.com/zeroXbrock/banner-content/main/content.txt)
 
+## params
+
+The following can be provided as query params to modify the banner:
+
+| param | description | example |
+| ----- | ----------- | ------- |
+| `contentUrl` | url to text content | `?contentUrl=https://raw.githubusercontent.com/zeroXbrock/banner-content/main/content.txt` |
+| `_period` | override animation duration | `?_period=60` |
+| `_content` | override banner content (should be URL-escaped) | `?_content=hello%20world!` |
+
+remember to use `&` to combine multiple params:
+
+`?_period=60&content=hello%20world!`
