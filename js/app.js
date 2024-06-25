@@ -19,8 +19,7 @@ const init = (params) => {
     const args = {
         ...params,
         contentUrl,
-        _period: queryParams['_period'] || params._period,
-        _content: queryParams['_content'] || params._content,
+        ...queryParams,
     }
     document.addEventListener('DOMContentLoaded', () => {
         doInit(args)
