@@ -5,10 +5,11 @@ const DEFAULT_CONTENT_SRC = 'https://raw.githubusercontent.com/zeroXbrock/banner
  * @param {{
  *  contentUrl: string,
  *  marqueeId: string,
- *  secondsPerChar: number,
- * }} params - Configuration parameters.
+ *  _period?: number,
+ * }} params - hardcoded configuration parameters.
  */
 const init = (params) => {
+    // query params take precedence over hardcoded parameters
     const queryParams = getQueryParams();
     if (!('contentUrl' in queryParams)) {
         console.warn(`No content URL provided, using default. To display your own content, set the 'contentUrl' query parameter in this page's URL.\nExample: ${window.location.href}?contentUrl=${DEFAULT_CONTENT_SRC}`)
@@ -16,8 +17,8 @@ const init = (params) => {
     const contentUrl = queryParams['contentUrl'] || DEFAULT_CONTENT_SRC
     const args = {
         ...params,
-        ...queryParams,
         contentUrl,
+        _period: queryParams['_period'] || params._period,
     }
     document.addEventListener('DOMContentLoaded', () => {
         doInit(args)

@@ -7,19 +7,19 @@ body {
 }
 
 .banner {
-    background: linear-gradient(to right, transparent, #83e173);
+    background: linear-gradient(to right, transparent, #292929);
     color: greenyellow;
     margin: 0;
     padding: 0px;
-    height: 32px;
+    height: 24px;
 }
 
 .marquee {
-    background-color: #000000;
+    background-color: #00000000;
     color: greenyellow;
     margin: 0;
     padding: 1px;
-    padding-top: 2px;
+    padding-top: 3px;
     padding-bottom: 2px;
     position: fixed;
     z-index: 9001;
@@ -27,7 +27,6 @@ body {
 
 .animation {
     position: fixed;
-    top: -20px;
     left: 0;
     width: 64px;
     margin: 0;
